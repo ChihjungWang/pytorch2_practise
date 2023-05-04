@@ -1,0 +1,14 @@
+https://www.youtube.com/watch?v=tWlqiPuMyQY&list=PLzw77domqr9vjVNZjgPlIzFtqthSp1a-A&index=2
+
+https://www.jb51.net/article/269996.htm
+
+
+
+conda create -n pytorch2 python=3.10 -y
+conda activate pytorch2
+conda env remove -n pytorch2
+conda deactivate
+
+
+conda activate pytorch2
+tensorboard --logdir=logs_train
