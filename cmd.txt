@@ -12,3 +12,7 @@ conda deactivate
 
 conda activate pytorch2
 tensorboard --logdir=logs_train
+
+
+
+python flask_app_v01.py
