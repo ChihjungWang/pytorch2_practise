@@ -20,16 +20,16 @@ def expand(img, background=(128,128,128), show=False):
     # 左邊界位置
     left = random.uniform(0.3 * width, width * ratio - width)
     # 上邊界位置
-    top = random.uniform(0.3 * width, width * ratio - width)
+    top = random.uniform(0.3 * height, height * ratio - height)
     while int(left + width) > int(width*ratio) or int(top + height) > int(height*ratio):
         ratio = random.uniform(1, 2)
         left = random.uniform(0.3* width, width * ratio - width)
-        top = random.uniform(0.3* width, width * ratio - width)
+        top = random.uniform(0.3* height, height * ratio - height)
     # 建立白色背景
     expand_img = np.zeros((int(height * ratio), int(width * ratio), depth), dtype = img.dtype)
     # 背景填充成灰色
     expand_img[:,:,:] = background
-    print(f'expand_img_size:{expand_img.shape}')
+    # print(f'expand_img_size:{expand_img.shape}')
     # 將圖片按先前生成的隨機位置貼上到背景中
     expand_img[int(top):int(top+height), int(left):int(left+width)] = img
 
@@ -74,8 +74,10 @@ class BoxData(Dataset):
 
     def __getitem__(self, index):
         img, lable = self.dataset[index]
+        # print(f'img: {img}')
         # 使用線上生成的方式，將轉換函數加入Dataset中
         img, box = expand(img, show=self.show)
+        return img, box
     
     def __len__(self):
         return len(self.dataset)

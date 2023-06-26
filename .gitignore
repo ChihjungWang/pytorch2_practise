@@ -161,3 +161,4 @@ cython_debug/
 datasets/
 checkpoints/
 kaggle/
+CNN_cifar10_detection/checkpoints

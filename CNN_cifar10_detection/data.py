@@ -24,15 +24,13 @@ def create_datasets(data_folder, transform_train=None, transform_test=None):
     trainset = torchvision.datasets.CIFAR10(
         root = data_folder, train=True, download=True, transform=transform_train
     )
-    trainloader = torch.utils.data.DataLoader(
-        trainset, batch_size=batch_size, shuffle=True, num_workers=2
-    )
+    # trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=2)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True)
     # 測試集
     testset = torchvision.datasets.CIFAR10(
         root = data_folder, train=False, download=True, transform=transform_test
     )
-    testloader = torch.utils.data.DataLoader(
-        testset, batch_size=batch_size, shuffle=False, num_workers=2
-    )
+    # testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False)
 
     return trainloader, testloader

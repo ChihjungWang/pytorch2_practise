@@ -1,0 +1,7 @@
+
+cd CNN_cifar10_detection
+python generate_data.py
+python train_val_regression.py
+tensorboard --logdir log
+python model.py
+python demo_regression.py
