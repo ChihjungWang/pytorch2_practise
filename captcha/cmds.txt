@@ -1,0 +1,4 @@
+cd captcha
+python captcha_train.py
+python captcha_data.py
+python captcha_demo.py
