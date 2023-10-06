@@ -1,0 +1,1 @@
+robocopy \\mcd-one\ta\11_AI_Tools\stable-diffusion\stable-diffusion-webui_new \\mcd-one\ta\11_AI_Tools\stable-diffusion\stable-diffusion-webui /E /xo /xa:sh /unicode /MT:100 /eta

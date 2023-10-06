@@ -2,3 +2,4 @@ cd captcha
 python captcha_train.py
 python captcha_data.py
 python captcha_demo.py
+python captcha_gradio_app.py
